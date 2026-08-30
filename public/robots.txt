@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ahmed-badr-s-igcse-physics-hub-263597105912.europe-west2.run.app/sitemap.xml

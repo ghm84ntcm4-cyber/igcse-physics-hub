@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+/* ===== Default Color Variables (Light Mode) ===== */
+:root {
+  --db-bg: #ffffff;
+  --db-bg-soft: #f8fafc;
+  --db-text: #0f172a;
+  --db-muted: #64748b;
+  --db-border: #e2e8f0;
+  --db-card: #ffffff;
+}
+
+/* ===== Dark Mode Color Variables ===== */
+[data-theme="dark"],
+.dark {
+  --db-bg: #0f172a;
+  --db-bg-soft: #1e293b;
+  --db-text: #f1f5f9;
+  --db-muted: #94a3b8;
+  --db-border: #334155;
+  --db-card: #1e293b;
+}
+
+[data-theme="dark"] body,
+.dark body {
+  background-color: #0b1120 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] header,
+.dark header {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] footer,
+.dark footer {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .bg-white,
+.dark .bg-white {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .bg-slate-50,
+.dark .bg-slate-50 {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .border-slate-200,
+.dark .border-slate-200,
+[data-theme="dark"] .border-slate-100,
+.dark .border-slate-100 {
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .text-slate-900,
+.dark .text-slate-900,
+[data-theme="dark"] .text-slate-800,
+.dark .text-slate-800 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .text-slate-700,
+.dark .text-slate-700,
+[data-theme="dark"] .text-slate-600,
+.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+.dark input,
+.dark select {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+}
+
+@layer base {
+  body {
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+  }
+
+  code, kbd, samp, pre {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+.font-serif-reading {
+  font-family: "Source Serif 4", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-mono-formula {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Custom scrollbars for clean UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print optimizations for students and teachers printing revision notes & worksheets */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 14mm 10mm 14mm 10mm;
+    @top-center {
+      content: "Mr. Ahmed Badr - IGCSE Physics Educator • WhatsApp: +966 53 067 5155 (KSA) / +20 109 968 3837 (EG)";
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #334155;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 4px;
+    }
+    @bottom-center {
+      content: "Cambridge & Edexcel IGCSE Physics Hub • Page " counter(page) " of " counter(pages);
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 7.5pt;
+      color: #64748b;
+    }
+  }
+
+  header, footer, #ai-tutor-nav-btn, #bookmarks-button, .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  main, .max-w-7xl, .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Prevent awkward page breaks inside formula blocks, cards, and definition boxes */
+  article, .chapter-card, .worksheet-section, .definition-card, .formula-card, .experiment-card {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Ensure custom educator headers print cleanly with high contrast */
+  .print-header-banner {
+    display: block !important;
+    background: #f8fafc !important;
+    color: #0f172a !important;
+    border: 1.5px solid #cbd5e1 !important;
+    margin-bottom: 16px !important;
+    page-break-inside: avoid !important;
+  }
+}

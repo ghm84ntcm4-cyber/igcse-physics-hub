@@ -1,0 +1,243 @@
+import { PracticalExperiment } from "../types";
+
+export const IGCSE_PRACTICALS: PracticalExperiment[] = [
+  {
+    id: "p6-hooke",
+    title: "Investigation of Hooke's Law (Spring Extension)",
+    topic: "Unit 1: Motion, Forces & Energy",
+    apparatus: [
+      "Helical spring",
+      "Clamp stand, boss and clamp",
+      "Meter ruler with mm divisions",
+      "Set of 100g slotted masses with hanger (each 100g = 1.0 N)",
+      "Set square (for horizontal alignment)",
+      "Pointer/fiducial pin attached to bottom of spring",
+    ],
+    method: [
+      "1. Clamp the ruler vertically next to the spring using a set square to ensure it is vertical.",
+      "2. Record the original unstretched length L₀ of the spring at eye level with the pointer to avoid parallax error.",
+      "3. Suspend a 1.0 N mass hanger from the spring and record the new length L.",
+      "4. Calculate extension x = L - L₀.",
+      "5. Add 1.0 N masses sequentially up to 6.0 N, measuring length L and calculating extension x each time.",
+      "6. Unload masses one by one to verify spring returns to initial length (checks elastic limit not exceeded).",
+      "7. Plot a graph of Load (y-axis) vs Extension (x-axis) and determine the spring constant k from gradient.",
+    ],
+    keyVariables: {
+      independent: "Load / Hanging Weight (N)",
+      dependent: "Extension of spring x (cm or m)",
+      controlled: [
+        "Spring used (same material and coil diameter)",
+        "Position of ruler",
+        "Gravitational field strength",
+      ],
+    },
+    sourcesOfError: [
+      "Parallax error when reading the ruler scale.",
+      "Ruler not perfectly vertical.",
+      "Spring swinging or oscillating while reading.",
+      "Exceeding the elastic limit / limit of proportionality.",
+    ],
+    improvements: [
+      "Use a pointer attached to the bottom of the spring aligned with a set square against the ruler.",
+      "Wait until spring is completely stationary before reading.",
+      "Clamp ruler firmly in position and check verticality with a plumb line or spirit level.",
+      "Repeat measurements on unloading and take the average extension.",
+    ],
+    safetyPrecautions: [
+      "Wear safety goggles to protect eyes in case the spring snaps or masses detach.",
+      "Place a soft padded tray / sand box on the bench beneath masses in case they drop.",
+      "Clamp the stand securely to the bench using a G-clamp so it does not topple.",
+    ],
+    graphGuidance: "Plot Load F (N) on y-axis vs Extension x (m or cm) on x-axis. Draw a straight line of best fit through the origin (0,0). Gradient = ΔF / Δx = Spring constant k.",
+  },
+  {
+    id: "p6-thermal-cooling",
+    title: "Investigating the Cooling Rate of Water (Thermal Insulation)",
+    topic: "Unit 2: Thermal Physics",
+    apparatus: [
+      "250 cm³ glass beakers (with and without insulation)",
+      "Insulating materials (cotton wool, bubble wrap, aluminum foil)",
+      "Cardboard lid with small hole for thermometer",
+      "Thermometer (-10 °C to 110 °C, precision ±0.5 °C or ±1 °C)",
+      "Stopwatch (precision 0.01 s)",
+      "Measuring cylinder (100 cm³)",
+      "Kettle / hot water supply",
+    ],
+    method: [
+      "1. Measure 150 cm³ of boiling water using a measuring cylinder and pour into the uninsulated beaker.",
+      "2. Place lid with thermometer on beaker, ensuring thermometer bulb is immersed in water without touching the beaker bottom or sides.",
+      "3. Allow water to cool to 80 °C (start temperature).",
+      "4. Start stopwatch and record water temperature every 30 seconds for 5 minutes.",
+      "5. Stir water gently before each reading to ensure uniform temperature.",
+      "6. Repeat identical procedure with beaker wrapped in 1 layer, 2 layers, and 3 layers of insulation.",
+    ],
+    keyVariables: {
+      independent: "Type or number of layers of insulation",
+      dependent: "Temperature drop / cooling rate (°C/min)",
+      controlled: [
+        "Initial volume of hot water (150 cm³)",
+        "Starting temperature of water (80 °C)",
+        "Room temperature",
+        "Size and shape of beaker",
+        "Presence of lid",
+      ],
+    },
+    sourcesOfError: [
+      "Heat lost from surface by evaporation and convection before starting.",
+      "Thermometer touching the glass beaker rather than water.",
+      "Water temperature not uniform throughout beaker.",
+      "Variations in room temperature / air draughts.",
+    ],
+    improvements: [
+      "Use a lid with a small hole for thermometer to minimize evaporation.",
+      "Stir water thoroughly before each reading.",
+      "Ensure thermometer bulb is positioned in the center of the liquid volume.",
+      "Conduct in a room with windows closed to eliminate air draughts.",
+    ],
+    safetyPrecautions: [
+      "Handle boiling water with care; use heat-resistant gloves or beaker tongs.",
+      "Pour water slowly to avoid splashing hot liquid onto skin.",
+      "Keep all electrical timers/equipment away from water spills.",
+    ],
+    graphGuidance: "Plot Temperature T (°C) on y-axis vs Time t (s or mins) on x-axis. Draw a smooth cooling curve. Steeper initial gradient represents faster initial rate of cooling.",
+  },
+  {
+    id: "p6-refraction-glass",
+    title: "Determining Refractive Index of a Rectangular Glass Block (Ray Tracing)",
+    topic: "Unit 3: Waves & Optics",
+    apparatus: [
+      "Rectangular glass block",
+      "White paper sheet on soft cork board",
+      "Ray box with single slit or 4 optical pins (P1, P2, P3, P4)",
+      "Protractor (precision ±1°)",
+      "30 cm ruler and sharp pencil",
+    ],
+    method: [
+      "1. Place glass block in center of paper and draw its sharp pencil outline ABCD.",
+      "2. Remove block and draw a normal line at 90° to surface AB at point O.",
+      "3. Draw an incident ray at angle i = 30° to the normal. Place two optical pins P1 and P2 on this ray, separated by at least 5 cm.",
+      "4. Replace glass block accurately on outline.",
+      "5. Look through opposite face CD of glass block at eye level with pin bottoms. Place pins P3 and P4 such that all 4 pins appear in a direct straight line.",
+      "6. Remove block, join P3 and P4 to find emergent ray point, and join to O to draw the refracted ray inside block.",
+      "7. Measure angle of refraction r using a protractor.",
+      "8. Repeat for angles of incidence i = 40°, 50°, 60°, 70°.",
+      "9. Plot sin(i) on y-axis vs sin(r) on x-axis. Calculate refractive index n from the straight line gradient.",
+    ],
+    keyVariables: {
+      independent: "Angle of incidence i (°)",
+      dependent: "Angle of refraction r (°)",
+      controlled: [
+        "Same glass block (same refractive index)",
+        "Wavelength/color of light",
+        "Block position on paper",
+      ],
+    },
+    sourcesOfError: [
+      "Pins placed too close together (< 5 cm apart), increasing angular sighting error.",
+      "Thick pencil lines causing protractor misalignment.",
+      "Looking at the heads of pins instead of the bases (pins may be tilted).",
+      "Glass block shifting during experiment.",
+    ],
+    improvements: [
+      "Separate optical pins by at least 5 cm (or 50 mm) to maximize alignment accuracy.",
+      "View the BASES of the pins at eye level against cork board.",
+      "Use a fine, sharp 2H pencil for all outlines and ray lines.",
+      "Repeat each angle measurement twice and calculate mean sin(r).",
+    ],
+    safetyPrecautions: [
+      "Take care when pushing sharp optical pins into cork board.",
+      "Handle glass block carefully to avoid dropping and chipping edges.",
+    ],
+    graphGuidance: "Plot sin(i) on y-axis against sin(r) on x-axis. Draw a straight line of best fit passing through (0,0). Gradient = sin(i) / sin(r) = Refractive Index n (typically 1.50 for glass).",
+  },
+  {
+    id: "p6-resistance-wire",
+    title: "Investigating How Resistance Depends on the Length of a Wire",
+    topic: "Unit 4: Electricity & Magnetism",
+    apparatus: [
+      "Constantan or Nichrome resistance wire taped to a meter ruler",
+      "DC power supply / 2 × 1.5 V cells",
+      "Ammeter (0–1 A, precision 0.02 A)",
+      "Voltmeter (0–5 V, precision 0.05 V)",
+      "Jockey / crocodile clip slider",
+      "Switch and connecting leads",
+      "Rheostat (variable resistor) to limit current",
+    ],
+    method: [
+      "1. Connect circuit with power supply, ammeter, switch, and variable resistor in series with the test wire.",
+      "2. Connect voltmeter in parallel across test length L of wire using a crocodile clip and movable jockey.",
+      "3. Set test length L to 20 cm (0.20 m). Close switch, quickly record current I and voltage V, and OPEN switch immediately.",
+      "4. Calculate resistance R = V / I.",
+      "5. Increase length L in steps of 20 cm (40 cm, 60 cm, 80 cm, 100 cm), recording V and I each time.",
+      "6. Plot graph of Resistance R (y-axis) vs Length L (x-axis).",
+    ],
+    keyVariables: {
+      independent: "Length of wire L (cm or m)",
+      dependent: "Resistance R = V / I (Ω)",
+      controlled: [
+        "Wire material (Nichrome / Constantan)",
+        "Wire diameter / cross-sectional area (SWG gauge)",
+        "Temperature of wire (kept low by opening switch between readings)",
+      ],
+    },
+    sourcesOfError: [
+      "Heating effect of current increasing resistance of wire during measurement.",
+      "Poor electrical contact between jockey/clip and wire due to oxide layer.",
+      "Kinks in wire causing inaccurate length measurements.",
+    ],
+    improvements: [
+      "Switch off circuit between readings to prevent wire from heating up.",
+      "Clean wire contacts with emery paper / sandpaper.",
+      "Ensure wire is kept straight and taut along ruler without kinks.",
+      "Tap jockey gently without pressing too hard to avoid altering wire diameter.",
+    ],
+    safetyPrecautions: [
+      "Do not touch bare wire while current is flowing (can get hot).",
+      "Ensure current is kept below 0.5 A using rheostat to prevent burning insulation.",
+    ],
+    graphGuidance: "Plot Resistance R (Ω) on y-axis vs Length L (cm) on x-axis. Draw a straight line of best fit through the origin. Proves R is directly proportional to length (R ∝ L).",
+  },
+];
+
+export const PAPER_6_GOLDEN_RULES = [
+  {
+    title: "1. Table Headers & Units Format",
+    rules: [
+      "Always write the physical quantity name (or symbol) followed by a slash '/' and the unit. Example: 'Length / cm', 'Time / s', 'Voltage / V', 'Current / A'.",
+      "Never put units inside the data cells! Units go in the header ONLY.",
+      "All raw data in a column MUST have consistent decimal places matching instrument precision (e.g. all to 1 d.p. for ruler: 12.0, 14.5, 18.0).",
+    ],
+  },
+  {
+    title: "2. Graph Plotting Masterclass (5/5 Marks Checklist)",
+    rules: [
+      "Axes Labels: Label both axes with Quantity / Unit (e.g. 'Distance / m' and 'Time / s').",
+      "Scale: Scale MUST occupy MORE THAN 50% of the grid in both x and y directions. Use sensible scales (1, 2, 5, 10 units per large square); never use awkward scales like 3 or 7!",
+      "Plotting Points: Plot points with small neat 'x' or dot inside a circle '⊙' within ±0.5 small square precision.",
+      "Line of Best Fit: Draw ONE single, thin, smooth continuous line or curve with a ruler. Ensure balanced distribution of points (equal number above and below the line). Disregard clear anomalous points.",
+      "Gradient Calculation: Draw a LARGE triangle covering AT LEAST 50% of the line. Read coordinates carefully (x₁, y₁) and (x₂, y₂) from the line itself (NOT from data points). Gradient = (y₂ - y₁) / (x₂ - x₁).",
+    ],
+  },
+  {
+    title: "3. Precision of Standard Instruments",
+    rules: [
+      "Meter ruler: ±1 mm (or 0.1 cm)",
+      "Vernier Caliper: ±0.1 mm (or 0.01 cm)",
+      "Micrometer Screw Gauge: ±0.01 mm",
+      "Measuring Cylinder (100 cm³): to nearest 1 cm³ (or 0.5 cm³)",
+      "Stopwatch: 0.01 s displayed, but write to nearest 0.1 s due to human reaction time",
+      "Electronic Balance: ±0.1 g or ±0.01 g",
+      "Protractor: ±1°",
+      "Thermometer: to nearest 0.5 °C or 1.0 °C",
+    ],
+  },
+  {
+    title: "4. Standard Experimental Improvements Cheat Sheet",
+    rules: [
+      "Mechanics / Pendulum: Time 20 oscillations and divide by 20 to reduce reaction time error; use a fiducial mark at equilibrium position.",
+      "Thermal experiments: Add lid and insulation (cotton wool) to beaker; stir liquid before reading; ensure thermometer bulb is fully immersed in middle.",
+      "Optics / Ray Tracing: Place pins far apart (at least 5 cm separation); use a darkened room for clear rays; view pin bases at eye level; use sharp pencil.",
+      "Electricity: Open switch between readings to prevent heating of wire; use variable resistor to keep current low; clean wire contacts with sandpaper.",
+    ],
+  },
+];
