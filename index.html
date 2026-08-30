@@ -1,99 +1,119 @@
-<!doctype html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Cache-Control Meta Tags to prevent stale HTML caching -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+    <!-- وسوم الـ SEO للظهور في محركات البحث -->
+    <title>IGCSE Physics Hub | أ/ أحمد بدر - منصة فيزياء الـ IGCSE</title>
+    <meta name="description" content="منصة متخصصة في شرح ومراجعة منهج IGCSE Physics (Paper 1, 3, 4) وتوفير المصادر والتدريبات للطلاب تحت إشراف أ/ أحمد بدر.">
+    <meta name="keywords" content="IGCSE Physics, IGCSE Physics Hub, IGCSE Physics revision, Paper 4 physics notes, أحمد بدر فيزياء, شيتات فيزياء igcse">
+    <meta name="author" content="أحمد بدر">
 
-    <!-- Primary SEO Meta Tags -->
-    <title>IGCSE Physics Hub | Direct Examiner Guidance & Notes by Ahmed Badr</title>
-    <meta name="title" content="IGCSE Physics Hub | Direct Examiner Guidance & Notes by Ahmed Badr" />
-    <meta name="description" content="Clear, examiner-guided IGCSE Physics revision by active teacher Ahmed Badr. Complete Cambridge 0625/0972 & Edexcel 4PH1 notes, interactive lab simulators, classified past papers, and mark scheme breakdowns." />
-    <meta name="keywords" content="IGCSE Physics, Cambridge 0625, Cambridge 0972, Edexcel 4PH1, IGCSE Physics Past Papers, Physics Revision Notes, Physics Worksheets PDF, Paper 6 Alternative to Practical, Ahmed Badr Physics, Physics Lab Simulators, Formula Sheet Solver, Grade 9 Physics" />
-    <meta name="author" content="Mr. Ahmed Badr" />
-    <meta name="robots" content="index, follow" />
-    <meta name="google-site-verification" content="google605381a1b3ea35f4" />
+    <!-- كود إثبات ملكية جوجل Search Console (استبدل النص الموضح بكودك الخاص) -->
+    <meta name="google-site-verification" content="ضع_كود_التحقق_الخاص_بك_هنا" />
 
-    <!-- PWA & Mobile Web App Manifest -->
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#1e3a8a" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Physics Hub" />
-    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <!-- وسوم المعاينة الاحترافية عند مشاركة الرابط (Open Graph) -->
+    <meta property="og:title" content="IGCSE Physics Hub | أ/ أحمد بدر">
+    <meta property="og:description" content="منصة متخصصة في شرح ومراجعة منهج IGCSE Physics وتوفير أفضل المصادر والتدريبات للطلاب.">
+    <meta property="og:url" content="https://igcsephysicshub.com/">
+    <meta property="og:type" content="website">
 
-    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ahmed-badr-s-igcse-physics-hub-263597105912.europe-west2.run.app/" />
-    <meta property="og:title" content="IGCSE Physics Hub | Direct Examiner Guidance & Notes by Ahmed Badr" />
-    <meta property="og:description" content="Cambridge 0625 & Edexcel 4PH1 Physics explained directly by active teacher & examiner Ahmed Badr. Virtual lab simulators, mark-scheme breakdowns, and classified past papers." />
-    <meta property="og:site_name" content="Ahmed Badr's IGCSE Physics Hub" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            direction: rtl;
+        }
+        header {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #38bdf8;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        .card h3 {
+            color: #0284c7;
+            margin-bottom: 15px;
+        }
+        .card p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="IGCSE Physics Hub | Ahmed Badr" />
-    <meta name="twitter:description" content="Clear Cambridge 0625 & Edexcel 4PH1 Physics guidance from active teacher & examiner Mr. Ahmed Badr. Topic notes, lab simulators, and real mark-scheme tips." />
+    <header>
+        <h1>IGCSE Physics Hub 🚀</h1>
+        <p>المنصة المتكاملة لدراسة ومراجعة فيزياء الـ IGCSE | أ/ أحمد بدر</p>
+    </header>
 
-    <!-- Schema.org Educational Structured Data for Google & Search Crawlers -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "Ahmed Badr's IGCSE Physics Hub",
-      "alternateName": "IGCSE Physics Masterclass",
-      "url": "https://ahmed-badr-s-igcse-physics-hub-263597105912.europe-west2.run.app/",
-      "description": "Comprehensive resources, textbook notes, lab simulators, formula solver, and practice worksheets for Cambridge IGCSE (0625/0972) and Pearson Edexcel (4PH1) Physics students and educators.",
-      "founder": {
-        "@type": "Person",
-        "name": "Ahmed Badr",
-        "jobTitle": "IGCSE Physics Educator & Academic Specialist",
-        "knowsAbout": ["IGCSE Physics", "Cambridge 0625", "Edexcel 4PH1", "Paper 6 ATP", "Physics Lab Simulations"]
-      },
-      "educationalCredentialAwarded": "IGCSE Grade 9 / A* Preparation",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "IGCSE Physics Learning Modules",
-        "itemListElement": [
-          {
-            "@type": "Course",
-            "name": "Complete IGCSE Physics Student Textbook",
-            "description": "Interactive study notes covering Motion, Thermal, Waves, Electricity, Nuclear, and Space Physics."
-          },
-          {
-            "@type": "Course",
-            "name": "Paper 6 Alternative to Practical Guide",
-            "description": "Master table readings, graphing skills, variables control, precautions, and experimental planning."
-          },
-          {
-            "@type": "Course",
-            "name": "Interactive Physics Lab Simulators",
-            "description": "8 dynamic virtual labs for Hooke's law, Snell's law, Ohm's law, and radioactive half-life decay."
-          }
-        ]
-      }
-    }
-    </script>
+    <div class="container">
+        <h2>أقسام المنصة</h2>
+        
+        <div class="card-grid">
+            <div class="card">
+                <h3>Paper 1 & 3 Revision</h3>
+                <p>ملخصات وأوراق عمل لمراجعة الأسئلة المقالية والأفكار الأساسية في المنهج.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Paper 4 Extended</h3>
+                <p>تدريبات مكثفة على المسائل والحسابات وتطبيقات قوانين الفيزياء بشكل مبسط.</p>
+            </div>
 
-    <!-- Typography & Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
-    <div id="root">
-      <!-- Search Engine Crawler Fallback -->
-      <noscript>
-        <h1>IGCSE Physics Hub by Ahmed Badr</h1>
-        <p>Welcome to the ultimate Cambridge 0625/0972 & Edexcel IGCSE Physics learning platform. Access core and extended physics worksheets, revision guides, interactive lab simulators, formula solvers, and past paper practice.</p>
-      </noscript>
+            <div class="card">
+                <h3>Past Papers & Model Answers</h3>
+                <p>نماذج الامتحانات المجمعة مع الإجابات النموذجية لضمان تحصيل أعلى الدرجات.</p>
+            </div>
+        </div>
     </div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+    <footer>
+        <p>© جميع الحقوق محفوظة - IGCSE Physics Hub</p>
+    </footer>
+
+</body>
 </html>
-
-
