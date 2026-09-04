@@ -1,130 +1,92 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مساعد IGCSE Physics AI</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f6f9; display: flex; flex-direction: column; height: 100vh; color: #333; }
-        header { background: #1e293b; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        header h1 { font-size: 1.2rem; }
-        header button { background: #3b82f6; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
-        header button:hover { background: #2563eb; }
-        #chat-container { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 15px; }
-        .message { max-width: 80%; padding: 12px 16px; border-radius: 12px; line-height: 1.5; font-size: 0.95rem; white-space: pre-wrap; }
-        .user { background: #2563eb; color: white; align-self: flex-start; border-bottom-right-radius: 2px; }
-        .bot { background: white; color: #1e293b; align-self: flex-end; border-bottom-left-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .error { background: #fee2e2; color: #dc2626; align-self: center; text-align: center; border: 1px solid #fca5a5; }
-        #input-container { padding: 15px 20px; background: white; display: flex; gap: 10px; border-top: 1px solid #e2e8f0; }
-        #user-input { flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; outline: none; }
-        #user-input:focus { border-color: #2563eb; }
-        #send-btn { background: #059669; color: white; border: none; padding: 0 20px; border-radius: 8px; font-size: 1rem; cursor: pointer; }
-        #send-btn:hover { background: #047857; }
-        #send-btn:disabled { background: #94a3b8; cursor: not-allowed; }
-    </style>
-</head>
-<body>
 
-    <header>
-        <h1>⚡ IGCSE Physics Assistant</h1>
-        <button onclick="promptApiKey(true)">🔑 تغيير مفتاح API</button>
-    </header>
+<!doctype html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Cache-Control Meta Tags to prevent stale HTML caching -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
-    <div id="chat-container">
-        <div class="message bot">مرحباً بك! أنا مساعدك في مادة IGCSE Physics. كيف يمكنني مساعدتك اليوم؟</div>
-    </div>
+    <!-- 1. الأساسيات ووسوم SEO وتحسين محركات البحث -->
+    <title>IGCSE Physics Hub | أ/ أحمد بدر - منصة شرح ومراجعات فيزياء IGCSE</title>
+    <meta name="title" content="IGCSE Physics Hub | أ/ أحمد بدر - شرح ومراجعات فيزياء IGCSE" />
+    <meta name="description" content="المنصة المتكاملة لدراسة ومراجعة منهج IGCSE Physics (CIE 0625/0972 / Edexcel 4PH1). ملخصات شاملة، شيتات تدريبية، معامل افتراضية تفاعلية، وأسرار امتحانات Paper 1, 2, 3, 4, 6 تحت إشراف أ/ أحمد بدر." />
+    <meta name="keywords" content="IGCSE Physics, IGCSE Physics Hub, Cambridge 0625, Cambridge 0972, Edexcel 4PH1, IGCSE Physics revision, Paper 4 physics notes, Paper 1 revision, Paper 6 ATP, Past papers physics, أحمد بدر فيزياء, تجارب فيزياء تفاعلية" />
+    <meta name="author" content="Mr. Ahmed Badr - أ/ أحمد بدر" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://igcsephysicshub.com/" />
 
-    <div id="input-container">
-        <input type="text" id="user-input" placeholder="اكتب سؤالك في الفيزياء هنا..." onkeypress="handleKeyPress(event)">
-        <button id="send-btn" onclick="sendMessage()">إرسال</button>
-    </div>
+    <!-- 2. كود إثبات ملكية Google Search Console -->
+    <meta name="google-site-verification" content="eLi3ICVKC9Yt4EG9McpGazPotYUlw9cm-3_-Jb9awYo" />
+    <meta name="google-site-verification" content="google605381a1b3ea35f4" />
 
+    <!-- 3. كود تحليلات جوجل Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
-        let apiKey = localStorage.getItem('gemini_api_key') || '';
-
-        function promptApiKey(force = false) {
-            if (!apiKey || force) {
-                const input = prompt("يرجى إدخال مفتاح Gemini API الخاص بك:", apiKey);
-                if (input && input.trim() !== '') {
-                    apiKey = input.trim();
-                    localStorage.setItem('gemini_api_key', apiKey);
-                    alert("تم حفظ المفتاح بنجاح!");
-                } else if (!apiKey) {
-                    alert("لن يمكنك استخدام الشات بوت بدون إدخال المفتاح.");
-                }
-            }
-        }
-
-        // إظهار نافذة إدخال المفتاح عند التحميل لأول مرة
-        window.onload = () => { promptApiKey(); };
-
-        function handleKeyPress(e) {
-            if (e.key === 'Enter') sendMessage();
-        }
-
-        async function sendMessage() {
-            const inputField = document.getElementById('user-input');
-            const chatContainer = document.getElementById('chat-container');
-            const sendBtn = document.getElementById('send-btn');
-            const query = inputField.value.trim();
-
-            if (!query) return;
-
-            if (!apiKey) {
-                promptApiKey();
-                if (!apiKey) return;
-            }
-
-            // عرض رسالة المستخدم
-            appendMessage(query, 'user');
-            inputField.value = '';
-            sendBtn.disabled = true;
-
-            // إشارة الانتظار
-            const loadingDiv = appendMessage('جاري التفكير...', 'bot');
-
-            try {
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{
-                            parts: [{ text: query }]
-                        }],
-                        systemInstruction: {
-                            parts: [{ text: "You are an expert physics tutor specializing in Cambridge and Edexcel IGCSE Physics. Provide accurate, clear, and structured answers in Arabic or English according to the user's input." }]
-                        }
-                    })
-                });
-
-                const data = await response.json();
-
-                if (response.ok && data.candidates && data.candidates[0].content.parts[0].text) {
-                    loadingDiv.innerText = data.candidates[0].content.parts[0].text;
-                } else {
-                    const errorMsg = data.error?.message || "حدث خطأ غير معروف أثناء الاتصال بـ API.";
-                    loadingDiv.innerText = `⚠️ خطأ: ${errorMsg}`;
-                    loadingDiv.classList.add('error');
-                }
-            } catch (err) {
-                loadingDiv.innerText = "⚠️ فشل الاتصال بالشبكة. تأكد من إعدادات المفتاح أو الاتصال بالإنترنت.";
-                loadingDiv.classList.add('error');
-            } finally {
-                sendBtn.disabled = false;
-                chatContainer.scrollTop = chatContainer.scrollHeight;
-            }
-        }
-
-        function appendMessage(text, sender) {
-            const chatContainer = document.getElementById('chat-container');
-            const msgDiv = document.createElement('div');
-            msgDiv.className = `message ${sender}`;
-            msgDiv.innerText = text;
-            chatContainer.appendChild(msgDiv);
-            chatContainer.scrollTop = chatContainer.scrollHeight;
-            return msgDiv;
-        }
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
     </script>
-</body>
+
+    <!-- 4. وسوم Open Graph للمشاركة (WhatsApp, Telegram, Facebook) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="IGCSE Physics Hub" />
+    <meta property="og:title" content="IGCSE Physics Hub | أ/ أحمد بدر" />
+    <meta property="og:description" content="المنصة المتكاملة لشرح ومراجعة منهج IGCSE Physics، شيتات تدريبية ومعامل افتراضية تفاعلية وتوجيهات الامتحانات." />
+    <meta property="og:url" content="https://igcsephysicshub.com/" />
+    <meta property="og:locale" content="ar_AR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IGCSE Physics Hub | أ/ أحمد بدر" />
+    <meta name="twitter:description" content="منصة متخصصة في شرح ومراجعة منهج IGCSE Physics وتوفير المصادر والشيتات التعليمية والمعامل التفاعلية." />
+
+    <!-- PWA & Mobile Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Physics Hub" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+
+    <!-- Schema.org Educational Structured Data for Google & Search Crawlers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Ahmed Badr's IGCSE Physics Hub",
+      "alternateName": "IGCSE Physics Masterclass",
+      "url": "https://igcsephysicshub.com/",
+      "description": "Comprehensive resources, textbook notes, lab simulators, formula solver, and practice worksheets for Cambridge IGCSE (0625/0972) and Pearson Edexcel (4PH1) Physics students and educators.",
+      "founder": {
+        "@type": "Person",
+        "name": "Ahmed Badr",
+        "jobTitle": "IGCSE Physics Educator & Academic Specialist",
+        "knowsAbout": ["IGCSE Physics", "Cambridge 0625", "Edexcel 4PH1", "Paper 6 ATP", "Physics Lab Simulations"]
+      },
+      "educationalCredentialAwarded": "IGCSE Grade 9 / A* Preparation"
+    }
+    </script>
+
+    <!-- Typography & Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="/assets/index.rcsRsO7g.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index.BUfmcZIZ.css">
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white font-sans">
+    <div id="root">
+      <!-- Search Engine Crawler Fallback -->
+      <noscript>
+        <h1>IGCSE Physics Hub | أ/ أحمد بدر</h1>
+        <p>المنصة المتكاملة لدراسة ومراجعة منهج IGCSE Physics (CIE / Edexcel). ملخصات شاملة، شيتات تدريبية على Paper 1, 3, 4, 6 تحت إشراف أ/ أحمد بدر.</p>
+      </noscript>
+    </div>
+  </body>
 </html>
