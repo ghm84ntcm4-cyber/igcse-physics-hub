@@ -1,124 +1,128 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- 1. الأساسيات ووسوم SEO -->
-    <title>IGCSE Physics Hub | أ/ أحمد بدر - شرح ومراجعات فيزياء IGCSE</title>
-    <meta name="description" content="المنصة المتكاملة لدراسة ومراجعة منهج IGCSE Physics (CIE / Edexcel). ملخصات شاملة، شيتات تدريبية على Paper 1, 3, 4, 6 تحت إشراف أ/ أحمد بدر.">
-    <meta name="keywords" content="IGCSE Physics, IGCSE Physics Hub, IGCSE Physics revision, Paper 4 physics notes, Paper 1 revision, Past papers physics, أحمد بدر فيزياء">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://igcsephysicshub.com/">
-
-    <!-- 2. كود إثبات ملكية Google Search Console -->
-    <meta name="google-site-verification" content="<meta name="google-site-verification" content="eLi3ICVKC9Yt4EG9McpGazPotYUlw9cm-3_-Jb9awYo" />ا" />
-
-    <!-- 3. كود تحليلات جوجل Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
-    <!-- 4. وسوم Open Graph للمشاركة (WhatsApp, Telegram, Facebook) -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="IGCSE Physics Hub">
-    <meta property="og:title" content="IGCSE Physics Hub | أ/ أحمد بدر">
-    <meta property="og:description" content="منصة متخصصة في شرح ومراجعة منهج IGCSE Physics وتوفير المصادر والشيتات التعليمية.">
-    <meta property="og:url" content="https://igcsephysicshub.com/">
-
-    <!-- الخطوط والتنسيقات -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #0d47a1;
-            --secondary-color: #1976d2;
-            --accent-color: #00e676;
-            --bg-color: #f8f9fa;
-            --text-color: #212529;
-        }
-        * { box-sizing: border-box; font-family: 'Tajawal', sans-serif; margin: 0; padding: 0; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
-        
-        header { background: var(--primary-color); color: white; padding: 20px 0; text-align: center; }
-        header h1 { font-size: 2.2rem; font-weight: 800; }
-        header p { opacity: 0.9; font-size: 1.1rem; }
-
-        .hero { padding: 50px 20px; text-align: center; background: linear-gradient(135deg, #0d47a1, #1e88e5); color: white; }
-        .hero h2 { font-size: 2rem; margin-bottom: 15px; }
-        .hero p { max-width: 700px; margin: auto; font-size: 1.1rem; }
-
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        .section-title { text-align: center; font-size: 1.8rem; color: var(--primary-color); margin-bottom: 30px; }
-
-        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: right; border-top: 5px solid var(--secondary-color); transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { color: var(--primary-color); margin-bottom: 10px; }
-        .card p { font-size: 0.95rem; color: #555; margin-bottom: 20px; }
-        
-        .download-btn { display: inline-block; width: 100%; text-align: center; background: var(--secondary-color); color: white; padding: 12px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; }
-        .download-btn:hover { background: var(--primary-color); }
-
-        .social-section { background: white; padding: 30px; border-radius: 12px; text-align: center; margin-top: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .social-links a { display: inline-block; margin: 10px; padding: 10px 20px; background: #e3f2fd; color: var(--primary-color); border-radius: 20px; text-decoration: none; font-weight: bold; }
-        .social-links a:hover { background: var(--secondary-color); color: white; }
-
-        footer { text-align: center; padding: 20px; background: #111; color: #aaa; margin-top: 50px; font-size: 0.9rem; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IGCSE Physics Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-4 font-sans">
 
-    <header>
-        <h1>IGCSE Physics Hub</h1>
-        <p>تحت إشراف الأستاذ أحمد بدر</p>
-    </header>
-
-    <section class="hero">
-        <h2>منصتك المتكاملة للتفوق في الفيزياء</h2>
-        <p>نوفر لك أفضل الملخصات، الشيتات، والتدريبات المباشرة لجميع أوراق امتحان IGCSE Physics وفق أحدث معايير المنهج.</p>
-    </section>
-
-    <div class="container">
-        <h2 class="section-title">📚 المكتبة الشاملة والملخصات</h2>
-
-        <div class="cards-grid">
-            <div class="card">
-                <h3>📝 Paper 1 & 2 (MCQ)</h3>
-                <p>تجميعات وتدريبات أسئلة الاختيار من متعدد للمستويين Core و Extended مع الحلول النموذجية.</p>
-                <a href="pdfs/paper1-summary.pdf" download class="download-btn">📥 تحميل ملفات Paper 1</a>
-            </div>
-
-            <div class="card">
-                <h3>📘 Paper 3 & 4 (Theory)</h3>
-                <p>ملخص شامل للقوانين والتعاريف والأسئلة المقالية الشائعة وكيفية الإجابة النموذجية عليها.</p>
-                <a href="pdfs/paper4-summary.pdf" download class="download-btn">📥 تحميل ملخص Paper 4</a>
-            </div>
-
-            <div class="card">
-                <h3>🔬 Paper 6 (ATP Skills)</h3>
-                <p>دليل تجارب الفيزياء، رسم المنحنيات البيانية (Graphs)، وأهم أخطاء القياس الشائعة.</p>
-                <a href="pdfs/paper6-notes.pdf" download class="download-btn">📥 تحميل دليل Paper 6</a>
-            </div>
+  <div class="w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-6">
+    
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div class="flex items-center gap-3">
+        <div class="p-2.5 bg-indigo-600/20 border border-indigo-500/30 rounded-2xl">
+          <i data-lucide="sparkles" class="w-6 h-6 text-indigo-400"></i>
         </div>
-
-        <div class="social-section">
-            <h3>📱 تواصل مع الأستاذ أحمد بدر</h3>
-            <p style="margin-bottom: 15px; color: #666;">تابع أحدث المراجعات والفيديوهات التعليمية على المنصات التالية:</p>
-            <div class="social-links">
-                <a href="#" target="_blank">TikTok</a>
-                <a href="#" target="_blank">LinkedIn</a>
-                <a href="#" target="_blank">WhatsApp</a>
-            </div>
+        <div>
+          <h1 class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            مساعد IGCSE Physics الذكي
+          </h1>
+          <p class="text-xs text-slate-400">منصة الأسئلة والدعم التعليمي</p>
         </div>
+      </div>
+      <button onclick="resetKey()" class="text-xs text-slate-500 hover:text-slate-300 underline">
+        تغيير المفتاح
+      </button>
     </div>
 
-    <footer>
-        <p>جميع الحقوق محفوظة © 2026 - IGCSE Physics Hub | أ/ أحمد بدر</p>
-    </footer>
+    <div id="outputBox" class="min-h-[200px] max-h-[400px] bg-slate-950/60 border border-slate-800 rounded-2xl p-5 text-slate-200 leading-relaxed overflow-y-auto">
+      <div class="flex flex-col items-center justify-center h-40 text-slate-500">
+        <i data-lucide="sparkles" class="w-10 h-10 mb-2 text-slate-700 animate-pulse"></i>
+        <p class="text-sm">اكتب سؤالك في الفيزياء أدناه للبدء...</p>
+      </div>
+    </div>
 
+    <div class="flex gap-2">
+      <input
+        type="text"
+        id="userInput"
+        placeholder="اكتب سؤالك هنا..."
+        onkeydown="if(event.key === 'Enter') sendToGemini()"
+        class="flex-1 bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3.5 text-slate-100 focus:outline-none focus:border-indigo-500 transition text-sm shadow-inner"
+      />
+      <button
+        onclick="sendToGemini()"
+        id="sendBtn"
+        class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 rounded-2xl transition flex items-center justify-center font-medium gap-2 shadow-lg shadow-indigo-600/20"
+      >
+        <span>إرسال</span>
+        <i data-lucide="send" class="w-4 h-4 transform rotate-180"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function getApiKey() {
+      let key = localStorage.getItem('gemini_api_key');
+      if (!key) {
+        key = prompt('يرجى إدخال مفتاح Gemini API الخاص بك مرة واحدة ليتم حفظه في متصفحك:');
+        if (key) {
+          localStorage.setItem('gemini_api_key', key.trim());
+        }
+      }
+      return key;
+    }
+
+    function resetKey() {
+      localStorage.removeItem('gemini_api_key');
+      alert('تم مسح المفتاح. قم بتحديث الصفحة لإدخال مفتاح جديد.');
+    }
+
+    async function sendToGemini() {
+      const apiKey = getApiKey();
+      if (!apiKey) {
+        alert('مطلوب إدخال المفتاح للتشغيل');
+        return;
+      }
+
+      const inputField = document.getElementById("userInput");
+      const outputBox = document.getElementById("outputBox");
+      const sendBtn = document.getElementById("sendBtn");
+      const prompt = inputField.value.trim();
+
+      if (!prompt) return;
+
+      sendBtn.disabled = true;
+      outputBox.innerHTML = `
+        <div class="flex flex-col items-center justify-center h-40 text-indigo-400 gap-2">
+          <div class="animate-spin rounded-full h-7 w-7 border-b-2 border-indigo-400"></div>
+          <span class="text-sm text-slate-400">جاري معالجة الإجابة...</span>
+        </div>
+      `;
+
+      try {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: "أنت معلم متخصص في منهج IGCSE Physics. أجب بدقة وبأسلوب تعليمي: " + prompt }] }]
+          })
+        });
+
+        const data = await response.json();
+        
+        if (data.candidates && data.candidates[0].content.parts[0].text) {
+          const replyText = data.candidates[0].content.parts[0].text;
+          outputBox.innerHTML = `
+            <span class="inline-block text-xs font-semibold px-2.5 py-1 bg-indigo-500/10 text-indigo-400 rounded-md border border-indigo-500/20 mb-3">إجابة المعلم:</span>
+            <p class="whitespace-pre-wrap text-slate-300 leading-relaxed">${replyText}</p>
+          `;
+        } else {
+          outputBox.innerHTML = `<p class="text-red-400 text-center">حدث خطأ في مفتاح API. اضغط على 'تغيير المفتاح' في الأعلى لإعادة إدخاله.</p>`;
+        }
+      } catch (error) {
+        outputBox.innerHTML = `<p class="text-red-400 text-center">تعذر الاتصال. تحقق من الشبكة.</p>`;
+      } finally {
+        sendBtn.disabled = false;
+        inputField.value = "";
+      }
+    }
+  </script>
 </body>
 </html>
