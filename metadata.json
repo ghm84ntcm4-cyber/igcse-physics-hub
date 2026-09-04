@@ -1,6 +1,6 @@
 {
   "name": "Ahmed Badr's IGCSE Physics Hub",
-  "description": "Direct, examiner-guided IGCSE Physics revision by Mr. Ahmed Badr. Complete syllabus notes, interactive lab simulators, classified past papers, and mark-scheme breakdowns for Cambridge and Edexcel.",
+  "description": "Comprehensive IGCSE Physics student textbook, master study guide, interactive lab simulators, formula solver, and AI tutor by Ahmed Badr.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

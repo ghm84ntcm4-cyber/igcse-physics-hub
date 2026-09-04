@@ -180,55 +180,8 @@ https://ahmed-badr-s-igcse-physics-hub-263597105912.europe-west2.run.app/about`;
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), "dist");
-
-    // Explicit handler for /sw.js to guarantee it is NEVER cached by browsers or CDNs
-    app.get("/sw.js", (req, res) => {
-      const swPath = path.join(distPath, "sw.js");
-      const pubSwPath = path.join(process.cwd(), "public", "sw.js");
-      const target = fs.existsSync(swPath) ? swPath : pubSwPath;
-      res.setHeader("Content-Type", "application/javascript; charset=utf-8");
-      res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
-      res.setHeader("Pragma", "no-cache");
-      res.setHeader("Expires", "0");
-      if (fs.existsSync(target)) {
-        res.sendFile(target);
-      } else {
-        res.status(404).send("// Service worker not found");
-      }
-    });
-
-    // Static asset serving with intelligent HTTP caching headers
-    app.use(
-      express.static(distPath, {
-        setHeaders: (res, filePath) => {
-          // If file is in assets/ folder (hashed bundle files: js, css, images)
-          if (filePath.includes(path.sep + "assets" + path.sep) || filePath.includes("/assets/")) {
-            res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
-          } else if (filePath.endsWith("sw.js")) {
-            // Service worker must NEVER be cached
-            res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
-            res.setHeader("Pragma", "no-cache");
-            res.setHeader("Expires", "0");
-          } else if (filePath.endsWith(".html")) {
-            // HTML files must NEVER be cached
-            res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0");
-            res.setHeader("Pragma", "no-cache");
-            res.setHeader("Expires", "0");
-            res.setHeader("Surrogate-Control", "no-store");
-          } else {
-            // Other root assets (favicon, manifest, icons, robots, etc.)
-            res.setHeader("Cache-Control", "public, max-age=3600, must-revalidate");
-          }
-        },
-      })
-    );
-
-    // SPA fallback: Send index.html with STRICT NO-CACHE headers
+    app.use(express.static(distPath));
     app.get("*", (req, res) => {
-      res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0");
-      res.setHeader("Pragma", "no-cache");
-      res.setHeader("Expires", "0");
-      res.setHeader("Surrogate-Control", "no-store");
       res.sendFile(path.join(distPath, "index.html"));
     });
   }
